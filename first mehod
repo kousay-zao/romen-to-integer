@@ -1,0 +1,31 @@
+class Solution(object):
+    dic={
+            "I":1,
+            "V":5,
+            "X":10,
+            "L":50,
+            "C":100,
+            "D":500,
+            "M":1000
+        }
+    def tur (self,unit):
+        a=self.dic
+        return a[unit]
+    #represent the collectin of data set
+    def collection(self,n):
+        
+        nbr=0
+        a=self.dic
+        for x in range(len(n)-1) :
+            if(self.tur(n[x])>=self.tur(n[x+1])):
+                nbr+=a[n[x]]
+            else:
+                nbr-=a[n[x]]
+        nbr+=self.tur(n[-1])
+        return nbr
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        return self.collection(s)
