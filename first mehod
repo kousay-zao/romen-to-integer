@@ -1,4 +1,5 @@
 class Solution(object):
+#full decleration
     dic={
             "I":1,
             "V":5,
